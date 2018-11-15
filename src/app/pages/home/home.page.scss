@@ -1,0 +1,33 @@
+.ios,
+.md {
+  page-home {
+    .searchbar {
+      margin: 0;
+    }
+
+    .location-card {
+      position: relative;
+      height: 270px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .location-card-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
+    .location-card-content {
+      p, 
+      span {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  }
+}

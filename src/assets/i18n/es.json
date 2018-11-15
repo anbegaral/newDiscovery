@@ -1,0 +1,39 @@
+{
+    "tabs": {
+        "home": "Home",
+        "guides": "Mis guías",
+        "walk": "Caminando",
+        "settings": "Configuración"
+    },
+    "home": {
+        "welcome": "Discovery Audioguides",
+        "audioguide": "audioguia",
+        "description": "Con esta app, podrás descargarte la audioguía que estas buscando y, además, contribuir creando y subiendo tus propias audioguías.",
+        "search": "Busca tu lugar",
+        "continent": "Continente",
+        "country": "País",
+        "place": "Lugar",
+        "select": "Selecciona de la lista",
+        "pois": "Puntos de interes: ",
+        "price": "Precio: ",
+        "duration": "Total duracion: ",
+        "noresults": "No se han encontrado resultados"
+    },
+    "guides": {
+        "download": "Comprar",
+        "language": "Idiomas disponibles: ",
+        "size": "Tamano: ",
+        "show": "Ver POIs",
+        "hide": "Ocultar POIs"
+
+    },
+    "login": {
+        "signin": "Acceso",
+        "signText": "Introduce tus datos para entrar o accede con Facebook",
+        "password": "Contraseña",
+        "cancel": "Cancelar",
+        "facebook": "Login con Facebook",
+        "register": "Crea tu cuenta"
+
+    }
+}
