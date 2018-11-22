@@ -45,6 +45,12 @@ export class LocationsService {
             actions.map(obj => ({ key: obj.payload.key, ...obj.payload.val() }))));
     }
 
+    getLocationById(id: string): Observable<Location[]> {
+        return this.firebase.list<Location>('locations', query =>
+        query.orderByKey().equalTo(id)).snapshotChanges().pipe(map(actions =>
+            actions.map(obj => ({ key: obj.payload.key, ...obj.payload.val() }))));
+    }
+
     addLocation(location: Location) {
         return this.firebase.list('locations').push(location);
     }

@@ -1,17 +1,18 @@
-import { LocationsService } from './../../services/locations.service';
-import { Component, OnInit } from '@angular/core';
-import { Audioguide } from '../../services/models';
-import { AudioguideService } from '../../services/audioguide.service';
-import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { AudioguideService } from '../../services/audioguide.service';
+import { LocationsService } from '../../services/locations.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Audioguide } from '../../services/models';
 
 @Component({
-  selector: 'app-guides',
-  templateUrl: './guides.page.html',
-  styleUrls: ['./guides.page.scss'],
+  selector: 'app-list-guides',
+  templateUrl: './list-guides.component.html',
+  styleUrls: ['./list-guides.component.scss']
 })
-export class GuidesPage implements OnInit {
+export class ListGuidesComponent implements OnInit {
+
     audioguides: Audioguide[] = [];
     locationName: string;
     lang: string;
@@ -32,7 +33,7 @@ export class GuidesPage implements OnInit {
   async presentLoadingWithOptions(message) {
     const loading = await this.loadingCtrl.create({
       spinner: 'bubbles',
-      duration: 5000,
+      duration: 500,
       message: message,
       translucent: true,
     //   cssClass: 'custom-class custom-loading'
