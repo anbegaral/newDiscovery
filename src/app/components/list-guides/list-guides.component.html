@@ -1,14 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{locationName}}</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Guides in {{locationName}}</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding cache-view="false">
     <div class="card" *ngFor="let audioguide of audioguides" (click)="viewGuide(audioguide)">
-        <h2>{{audioguide.title}}</h2>      
+        <h2>{{audioguide.title}}</h2>
         <img *ngIf="audioguide.imageUrl" src="{{audioguide.imageUrl}}">
-        <div class="card-footer">      
+        <div class="card-footer">
             <div>
                 <ion-icon name="locate"></ion-icon> {{audioguide.pois}} POIs
             </div>
@@ -17,7 +20,7 @@
             </div>
             <div>
                 <ion-icon name="time"></ion-icon> {{audioguide.duration}} mins
-            </div>      
+            </div>
         </div>
     </div>
 </ion-content>

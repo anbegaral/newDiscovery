@@ -1,3 +1,4 @@
+import { ListGuidesComponent } from './../../components/list-guides/list-guides.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -20,6 +21,11 @@ const routes: Routes = [
         path: 'home',
         outlet: 'home',
         component: HomePage
+      },
+      {
+        path: 'list-guides/:id',
+        outlet: 'home',
+        component: ListGuidesComponent
       },
       {
         path: 'guides',

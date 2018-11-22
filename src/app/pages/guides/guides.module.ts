@@ -8,10 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { GuidesPage } from './guides.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: GuidesPage
-  }
+  { path: '', component: GuidesPage, outlet: 'guides' },
+//   { path: 'guides/:id', loadChildren: './pages/guides/guides.module#GuidesPageModule' }
 ];
 
 @NgModule({
@@ -21,6 +19,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [GuidesPage]
+  declarations: [GuidesPage],
+  exports: [RouterModule]
 })
 export class GuidesPageModule {}
