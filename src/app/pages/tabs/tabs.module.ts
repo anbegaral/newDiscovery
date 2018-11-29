@@ -1,3 +1,4 @@
+import { ViewGuideComponentModule } from './../../components/view-guide/view-guide.module';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -21,7 +22,8 @@ import { ListGuidesComponentModule } from '../../components/list-guides/list-gui
     HomePageModule,
     GuidesPageModule,
     ContactPageModule,
-    ListGuidesComponentModule
+    ListGuidesComponentModule,
+    ViewGuideComponentModule
   ],
   declarations: [TabsPage]
 })

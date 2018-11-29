@@ -6,6 +6,7 @@ import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { GuidesPage } from '../guides/guides.page';
 import { ContactPage } from '../contact/contact.page';
+import { ViewGuideComponent } from '../../components/view-guide/view-guide.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
         path: 'list-guides/:id',
         outlet: 'home',
         component: ListGuidesComponent
+      },
+      {
+        path: 'view-guide/:id',
+        outlet: 'home',
+        component: ViewGuideComponent
       },
       {
         path: 'guides',

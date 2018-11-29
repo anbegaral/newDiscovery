@@ -31,8 +31,15 @@ export class AudioguideService {
         actions.map(obj => ({ key: obj.payload.key, ...obj.payload.val() }))));
   }
 
+//   getAudioguide(idAudioguide: string) {
+//     return this.firebase.object(`audioguides/${idAudioguide}`).valueChanges().pipe(map(actions =>
+//         actions.map(obj => ({ key: obj.payload.key, ...obj.payload.val() }))));
+//   }
+
   getAudioguide(idAudioguide: string) {
-    return this.firebase.object(`audioguides/${idAudioguide}`);
+    return this.firebase.list<Audioguide>('audioguides', query =>
+    query.orderByKey().equalTo(idAudioguide)).snapshotChanges().pipe(map(actions =>
+        actions.map(obj => ({ key: obj.payload.key, ...obj.payload.val() }))));
   }
 
   searchGuides(start, end): AngularFireList<Audioguide> {

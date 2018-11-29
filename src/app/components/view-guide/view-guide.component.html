@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{audioguide.title}}</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding cache-view="false">
+    <div class="guide">
+      <h2>{{audioguide.title}}</h2>      
+      <img *ngIf="audioguide.imageUrl" src="{{audioguide.imageUrl}}">
+      <p>{{audioguide.description}}</p>
+      <div class="guide-footer">      
+        <div>
+            <ion-icon name="locate"></ion-icon> {{audioguide.pois}} POIs
+        </div>
+        <div>
+            <ion-icon name="pricetag"></ion-icon> {{audioguide.price}} $
+        </div>
+        <div>
+            <ion-icon name="time"></ion-icon> {{audioguide.duration}} mins
+        </div>      
+      </div>    
+      <!-- <button ion-button outline icon-start (click)="viewPois()">
+        <ion-icon name="eye"></ion-icon>
+        {{(changeArrow ? 'guides.hide' : 'guides.show') | translate}}
+      </button> -->
+      <ul>
+        <li *ngFor="let poi of audioguide.audioguidePois">
+          <img src="{{poi.imageUrl}}">
+          <div>
+            <h4>{{poi.title}}</h4>
+            <p>{{'home.duration' | translate}}{{poi.duration}} mins</p>
+            <p>{{'guides.size' | translate}}{{poi.size}} kb</p>
+          </div>
+          <ion-icon name="play" item-end *ngIf="poi.isPreview && !isPlaying" (click)="listen(poi.file)"></ion-icon>
+          <ion-icon name="pause" item-end *ngIf="poi.isPreview && isPlaying" (click)="pause()"></ion-icon>
+          <ion-icon name="square" item-end *ngIf="poi.isPreview && isPlaying" (click)="stop()"></ion-icon>
+        </li>
+      </ul>
+      <button ion-button outline icon-start (click)="getAccount()">
+        <ion-icon name="cloud-download"></ion-icon>
+        {{'guides.download' | translate}}
+      </button>
+    </div>
+  </ion-content>
+  
