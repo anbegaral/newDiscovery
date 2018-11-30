@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListGuidesComponent } from './list-guides.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { PreloadImageComponent } from './preload-image.component';
 
 const routes: Routes = [
-    { path: '', component: ListGuidesComponent },
+    { path: '', component: PreloadImageComponent },
 ];
 
 @NgModule({
@@ -20,7 +20,8 @@ const routes: Routes = [
         TranslateModule.forChild(),
         RouterModule.forChild(routes)
     ],
-    declarations: [ListGuidesComponent],
-    exports: [RouterModule]
+    declarations: [PreloadImageComponent],
+    exports: [RouterModule],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class ListGuidesComponentModule { }
+export class PreloadImageComponentModule { }

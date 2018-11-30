@@ -18,7 +18,6 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 
-
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
   }

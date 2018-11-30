@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListGuidesComponent } from './list-guides.component';
+import { PreloadImageComponent } from './preload-image.component';
 
-describe('ListGuidesComponent', () => {
-  let component: ListGuidesComponent;
-  let fixture: ComponentFixture<ListGuidesComponent>;
+describe('PreloadImageComponent', () => {
+  let component: PreloadImageComponent;
+  let fixture: ComponentFixture<PreloadImageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListGuidesComponent ]
+      declarations: [ PreloadImageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListGuidesComponent);
+    fixture = TestBed.createComponent(PreloadImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,11 +7,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { Audioguide } from '../../services/models';
 
 @Component({
-    selector: 'app-list-guides',
-    templateUrl: './list-guides.component.html',
-    styleUrls: ['./list-guides.component.scss']
+  selector: 'app-list-guides',
+  templateUrl: './list-guides.page.html',
+  styleUrls: ['./list-guides.page.scss'],
 })
-export class ListGuidesComponent implements OnInit {
+export class ListGuidesPage implements OnInit {
 
     audioguides: Audioguide[] = [];
     locationName: string;
@@ -66,3 +66,4 @@ export class ListGuidesComponent implements OnInit {
         this.navCtrl.navigateForward('/tabs/(home:view-guide/' + audioguide.key + ')');
     }
 }
+
