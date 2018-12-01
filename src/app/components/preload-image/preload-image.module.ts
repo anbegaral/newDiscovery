@@ -13,6 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+    declarations: [PreloadImageComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -20,8 +21,7 @@ const routes: Routes = [
         TranslateModule.forChild(),
         RouterModule.forChild(routes)
     ],
-    declarations: [PreloadImageComponent],
-    exports: [RouterModule],
+    exports: [PreloadImageComponent],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class PreloadImageComponentModule { }

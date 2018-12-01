@@ -18,8 +18,8 @@
     </div>
   
     <div *ngFor="let location of locations" class="location-card" (click)="openLocation(location)">
-      <img src="{{location.imageUrl}}" class="location-card-image">
-      <div class="location-card-content">     
+      <preload-image [ratio]="{w: 2, h: 1}" [src]="location.imageUrl" class="location-card-image"></preload-image>
+        <div class="location-card-content">     
         <h1>
           {{location.locationName}}, {{location.countryName}}
         </h1>

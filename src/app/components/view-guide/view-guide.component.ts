@@ -1,3 +1,4 @@
+import { PlayGuideProvider } from './../../services/play-service';
 import { AudioguideService } from './../../services/audioguide.service';
 import { AlertController } from '@ionic/angular';
 import { LoadingController, NavController } from '@ionic/angular';
@@ -7,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SqliteServiceProvider } from '../../services/sqlite-service';
 import { Storage } from '@ionic/storage';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-view-guide',
@@ -16,6 +17,7 @@ import { Observable } from 'rxjs';
 })
 export class ViewGuideComponent implements OnInit {
     audioguide: Audioguide;
+    isPlaying: any = false;
 
     constructor(private storage: Storage,
         private sqliteService: SqliteServiceProvider,
@@ -24,26 +26,28 @@ export class ViewGuideComponent implements OnInit {
         public navCtrl: NavController,
         private route: ActivatedRoute,
         public alertCtrl: AlertController,
-        private audioguideService: AudioguideService) { }
+        private audioguideService: AudioguideService,
+        private playService: PlayGuideProvider) {}
 
     ngOnInit() {
         this.getAudioguide();
     }
 
-    //   listen(filename){
-    //     this.playService.listenStreaming(filename)
-    //     this.playService.isPlaying.subscribe(isPlaying => this.isPlaying = isPlaying)
-    //   }
+    listen(filename) {
+        this.playService.listenStreaming(filename);
+        this.playService.isPlaying.subscribe(isPlaying => this.isPlaying = isPlaying);
+    }
 
-    //   pause() { 
-    //     this.playService.pause()
-    //     this.playService.isPlaying.subscribe(isPlaying => this.isPlaying = isPlaying)
-    //   }
+    pause() {
+        this.playService.pause();
+        this.playService.isPlaying.subscribe(isPlaying => this.isPlaying = isPlaying);
+    }
 
-    //   stop() {
-    //     this.playService.stop()
-    //     this.playService.isPlaying.subscribe(isPlaying => this.isPlaying = isPlaying)
-    //   }
+    stop() {
+        this.playService.stop();
+        this.playService.isPlaying.subscribe(isPlaying => this.isPlaying = isPlaying);
+    }
+
     async presentAlertConfirm() {
         const alert = await this.alertCtrl.create({
         header: 'Error!',
@@ -64,7 +68,10 @@ export class ViewGuideComponent implements OnInit {
 
     getAudioguide() {
         const idAudioguide = this.route.snapshot.paramMap.get('id');
-        this.audioguideService.getAudioguide(idAudioguide).subscribe(audioguide => this.audioguide = audioguide[0]);
+        this.audioguideService.getAudioguide(idAudioguide).subscribe(audioguide => {
+            this.audioguide = audioguide[0];
+            this.audioguideService.getPoiList(this.audioguide.key).subscribe(poi => this.audioguide.audioguidePois = poi);
+        });
     }
 
     getAccount() {

@@ -5,7 +5,9 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ng
 import { Upload } from './models';
 import * as firebase from 'firebase';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class FilesServiceProvider implements OnInit {
 
     storageDirectory: any;

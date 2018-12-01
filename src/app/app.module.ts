@@ -1,3 +1,4 @@
+import { PreloadImageComponentModule } from './components/preload-image/preload-image.module';
 import { FilesServiceProvider } from './services/files-service';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,7 +32,9 @@ export const firebaseConfig = {
     messagingSenderId: '79539419393'
   };
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+      AppComponent
+    ],
   entryComponents: [],
   imports: [
       BrowserModule,
@@ -65,7 +68,7 @@ export const firebaseConfig = {
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [
-    TranslateModule,
+    TranslateModule
   ]
 })
 export class AppModule {}

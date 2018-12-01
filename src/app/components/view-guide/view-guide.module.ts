@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { ViewGuideComponent } from './view-guide.component';
+import { PreloadImageComponentModule } from '../preload-image/preload-image.module';
 
 const routes: Routes = [
     { path: '', component: ViewGuideComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
         CommonModule,
         FormsModule,
         IonicModule,
+        PreloadImageComponentModule,
         TranslateModule.forChild(),
         RouterModule.forChild(routes)
     ],
