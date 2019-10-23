@@ -1,3 +1,4 @@
+import { ViewGuideComponentModule } from './../../components/view-guide/view-guide.module';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,8 @@ import { TabsPage } from './tabs.page';
 import { ContactPageModule } from '../contact/contact.module';
 import { GuidesPageModule } from '../guides/guides.module';
 import { HomePageModule } from '../home/home.module';
-import { ListGuidesComponentModule } from '../../components/list-guides/list-guides.module';
+import { ListGuidesPageModule } from '../list-guides/list-guides.module';
+import { LoginComponentModule } from '../../components/login/login.module';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { ListGuidesComponentModule } from '../../components/list-guides/list-gui
     HomePageModule,
     GuidesPageModule,
     ContactPageModule,
-    ListGuidesComponentModule
+    ListGuidesPageModule,
+    ViewGuideComponentModule,
+    LoginComponentModule
   ],
   declarations: [TabsPage]
 })

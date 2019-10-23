@@ -10,7 +10,7 @@
 <ion-content padding cache-view="false">
     <div class="card" *ngFor="let audioguide of audioguides" (click)="viewGuide(audioguide)">
         <h2>{{audioguide.title}}</h2>
-        <img *ngIf="audioguide.imageUrl" src="{{audioguide.imageUrl}}">
+        <preload-image *ngIf="audioguide.imageUrl" [ratio]="{w: 2, h: 1}" [src]="audioguide.imageUrl"></preload-image>
         <div class="card-footer">
             <div>
                 <ion-icon name="locate"></ion-icon> {{audioguide.pois}} POIs

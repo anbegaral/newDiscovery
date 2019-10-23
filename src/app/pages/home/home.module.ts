@@ -1,3 +1,4 @@
+import { PreloadImageComponentModule } from './../../components/preload-image/preload-image.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,6 +19,7 @@ const routes: Routes = [
         FormsModule,
         TranslateModule.forChild(),
         LocationsDropdownComponentModule,
+        PreloadImageComponentModule,
         RouterModule.forChild(routes)
     ],
     declarations: [HomePage],

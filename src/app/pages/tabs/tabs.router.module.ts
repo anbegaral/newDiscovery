@@ -1,4 +1,3 @@
-import { ListGuidesComponent } from './../../components/list-guides/list-guides.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,6 +5,9 @@ import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { GuidesPage } from '../guides/guides.page';
 import { ContactPage } from '../contact/contact.page';
+import { ViewGuideComponent } from '../../components/view-guide/view-guide.component';
+import { ListGuidesPage } from '../list-guides/list-guides.page';
+import { LoginComponent } from '../../components/login/login.component';
 
 const routes: Routes = [
   {
@@ -25,7 +27,17 @@ const routes: Routes = [
       {
         path: 'list-guides/:id',
         outlet: 'home',
-        component: ListGuidesComponent
+        component: ListGuidesPage
+      },
+      {
+        path: 'view-guide/:id',
+        outlet: 'home',
+        component: ViewGuideComponent
+      },
+      {
+        path: 'login/:audioguide',
+        outlet: 'home',
+        component: LoginComponent
       },
       {
         path: 'guides',

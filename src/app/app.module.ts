@@ -1,3 +1,5 @@
+import { PreloadImageComponentModule } from './components/preload-image/preload-image.module';
+import { FilesServiceProvider } from './services/files-service';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -13,6 +15,9 @@ import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-transla
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicStorageModule } from '@ionic/storage';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './src/assets/i18n/', '.json');
@@ -27,7 +32,9 @@ export const firebaseConfig = {
     messagingSenderId: '79539419393'
   };
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+      AppComponent
+    ],
   entryComponents: [],
   imports: [
       BrowserModule,
@@ -52,12 +59,16 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     TranslateService,
+    SQLite,
+    FilesServiceProvider,
+    File,
+    FileTransfer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [
-    TranslateModule,
+    TranslateModule
   ]
 })
 export class AppModule {}

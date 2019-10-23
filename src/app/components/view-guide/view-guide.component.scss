@@ -1,0 +1,44 @@
+.guide {
+        
+    h2 {
+        padding: 10px;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            img {
+                width: 25%;
+                height: auto;
+                margin-right: 10px;
+            }
+            div {
+                text-align: left;
+                flex-grow: 1;
+            }
+        }
+    }
+
+    &-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+ion-icon {
+        font-size: 1.5em;
+        color: blue;
+}        

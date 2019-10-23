@@ -92,8 +92,8 @@ export class Upload {
     image: string;
     imageUrl: string;
     progress: number;
-    
-    constructor(file:File) {
-        this.file = file
+
+    constructor(file: File) {
+        this.file = file;
     }
 }

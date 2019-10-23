@@ -40,7 +40,7 @@ export class HomePage implements OnInit {
     async presentLoadingWithOptions(message) {
         const loading = await this.loadingCtrl.create({
             spinner: 'bubbles',
-            duration: 5000,
+            duration: 500,
             message: message,
             translucent: true,
             //   cssClass: 'custom-class custom-loading'
