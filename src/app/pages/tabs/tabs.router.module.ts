@@ -7,6 +7,7 @@ import { GuidesPage } from '../guides/guides.page';
 import { ContactPage } from '../contact/contact.page';
 import { ViewGuideComponent } from '../../components/view-guide/view-guide.component';
 import { ListGuidesPage } from '../list-guides/list-guides.page';
+import { LoginComponent } from '../../components/login/login.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
         path: 'view-guide/:id',
         outlet: 'home',
         component: ViewGuideComponent
+      },
+      {
+        path: 'login/:audioguide',
+        outlet: 'home',
+        component: LoginComponent
       },
       {
         path: 'guides',

@@ -51,14 +51,14 @@ export class ViewGuideComponent implements OnInit {
     async presentAlertConfirm() {
         const alert = await this.alertCtrl.create({
         header: 'Error!',
-        message: 'The audioguide already exists.',
+        message: 'This audioguide already exists.',
         buttons: [
           {
             text: 'Close',
             role: 'close',
             // cssClass: 'secondary',
             handler: () => {
-                this.navCtrl.navigateForward('MyguidesPage');
+                this.navCtrl.navigateForward('/GuidesPage');
             }
           }
         ]
@@ -76,7 +76,6 @@ export class ViewGuideComponent implements OnInit {
 
     getAccount() {
         this.storage.get('isLoggedin').then(isLoggedin => {
-            console.log('isLoggedin ' + isLoggedin);
             if (isLoggedin) {
                 // TODO sistema de compra
                 this.sqliteService.getDatabaseState().subscribe(ready => {
@@ -92,7 +91,7 @@ export class ViewGuideComponent implements OnInit {
                             console.log(`no registered in ` + data);
                             this.navCtrl.navigateForward('/tabs/(home:view-guide/:' + this.audioguide.id + ')');
                         } else {
-                            console.log(`registered in ` + data)
+                            console.log(`registered in ` + data);
                             this.navCtrl.navigateForward('/tabs/(home:login/:' + this.audioguide.id + ')');
                         }
                     }
@@ -104,11 +103,11 @@ export class ViewGuideComponent implements OnInit {
     buyAudioguide(audioguide: Audioguide) {
         // Checks if the audioguide is already downloaded in sqlite
         this.sqliteService.getAudioguide(audioguide.key).then(data => {
-            console.log(`buy ` + data)
+            console.log(`buy ` + data);
             if (data === null) {  // it does not exist
                 audioguide.purchased = true;
                 this.sqliteService.addAudioguide(audioguide).then(() => {
-                    this.navCtrl.navigateForward('MyguidesPage');
+                    this.navCtrl.navigateForward('/GuidesPage');
                 }).catch(error => console.log('error addAudioguide ' + error));
             } else {
                 this.presentAlertConfirm();

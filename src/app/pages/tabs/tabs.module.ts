@@ -12,6 +12,7 @@ import { ContactPageModule } from '../contact/contact.module';
 import { GuidesPageModule } from '../guides/guides.module';
 import { HomePageModule } from '../home/home.module';
 import { ListGuidesPageModule } from '../list-guides/list-guides.module';
+import { LoginComponentModule } from '../../components/login/login.module';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { ListGuidesPageModule } from '../list-guides/list-guides.module';
     GuidesPageModule,
     ContactPageModule,
     ListGuidesPageModule,
-    ViewGuideComponentModule
+    ViewGuideComponentModule,
+    LoginComponentModule
   ],
   declarations: [TabsPage]
 })

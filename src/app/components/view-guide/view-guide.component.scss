@@ -13,9 +13,11 @@
         padding-left: 0;
         li {
             display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
             img {
                 width: 25%;
-                height: 25%;
+                height: auto;
                 margin-right: 10px;
             }
             div {
